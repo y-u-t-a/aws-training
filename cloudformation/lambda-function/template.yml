@@ -1,0 +1,14 @@
+Description: A sample lambda template
+Resources:
+  lambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: sample-function
+      Handler: index.handler
+      MemorySize: 128
+      Role: arn:aws:iam::<account_number>:role/service-role/<role_name>
+      Runtime: python3.6
+      Timeout: 900
+      Code:
+        S3Bucket: <s3bucket>
+        S3Key: python.zip
